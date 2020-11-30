@@ -1,22 +1,25 @@
- @extends('template.base')
+
+@extends('template.base')
 @section('content')
- <div class="container">
+          <div class="container">
             <div class="row">
               <div class="col-md-12 col-xs-12">
-                <div class="card">
+                <div class="card" style="margin-top: 40px;">
                   <div class="card-header">
-                    Detail Data User
+                    Detail Data Artikel
                   </div>
                   <div class="card-body" >
-                    <h1>{{$user->nama}}</h1>
+                    <h3>{{$artikel->judul}}</h3>
                     <hr>
                     <p>
-                      {{"@". $user->username}} |
-                      Email : {{$user->email}} 
+                         {!! nl2br($artikel->deskripsi) !!}
                     </p>
+                   
                   </div>
                 </div>
               </div>  
             </div> 
           </div>
-          @endsection
+
+
+@endsection

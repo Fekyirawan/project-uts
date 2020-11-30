@@ -1,12 +1,12 @@
 
-@extends('template.beranda')
+@extends('template.base')
 @section('content')
   <div class="container">
     <div class="row">
       <div class="col-md-11">
           <div class="row">
             <div class="col-md-12">
-              @include('utils.notif')
+            @include('utils.notif')
             </div>
           </div>
           <div class="card" style="margin-top: 40px;">
@@ -30,7 +30,7 @@
                         <div class="btn-group">
                           <a href="{{ url('artikel', $artikel->id) }}" class="btn btn-dark"><i class="fa fa-info"></i></a>
                           <a href="{{ url('artikel', $artikel->id) }}/edit" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                          @include('utils.delete',['url' => url('produk', $artikel->id)])
+                          @include('utils.delete',['url' => url('artikel', $artikel->id)])
                         </div>
                        </td>
                       <td> {{$artikel->judul}} </td>
@@ -40,9 +40,12 @@
                 </tbody>
               </table> 
             </div>
+           
           </div>
         </div>
       </div>  
     </div> 
   </div>
 @endsection
+
+

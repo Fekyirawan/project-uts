@@ -17,10 +17,5 @@ class HomeController extends Controller{
 		return view('client.client');
 	}
 
-		function test($produk){
-			echo "Nama produk $produk";
-	
-	}
-
 
 }

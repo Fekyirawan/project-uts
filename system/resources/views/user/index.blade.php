@@ -2,38 +2,44 @@
           @section('content')
           <div class="container">
             <div class="row">
-              <div class="col-md-12 col-xs-12">
-                <div class="card">
-                  <div class="card-header">
-                    Edit Data User
+              <div class="col-md-11">
+                <div class="row">
+                  <div class="col-md-12">
+                    @include('utils.notif')
                   </div>
-                  <div class="card-body" >
-                   <form action="{{url('user', $user->id)}}" method="post">
-                      @csrf
-                      @method("PUT")
-                    <div class="form-group">
-                          <label for="" class="control-label">Nama</label>
-                          <input type="text" class="form-control" name="nama" value="{{ $user->nama}}"></input>
-                        </div>
-                        <div class="form-group">
-                          <label for="" class="control-label">Username</label>
-                          <input type="text" class="form-control" name="username" value="{{ $user->username}}"></input>
-                        </div>
-                         <div class="form-group">
-                          <label for="" class="control-label">Email</label>
-                          <input type="email" class="form-control" name="email" value="{{ $user->email}}"></input>
-                        </div>
-                        <div class="form-group">
-                          <label for="" class="control-label">Password</label>
-                          <input type="password" class="form-control" name="password"></input>
-                        </div>
-                         <div class="form-group">
-                          <label for="" class="control-label">No Hp</label>
-                          <input type="text" class="form-control" name="no_handphone"></input>
-                        </div>
-
-                     <button class="btn btn-dark float-right"><i class="fa fa-save"></i> Simpan</button>
-                    </form>
+                </div>
+                <div class="card" style="margin-top: 40px;">
+                  <div class="card-header">
+                  Data User
+                  <a href="{{ url('user/create') }}" class="btn btn-dark float-right"><i class="fa fa-plus ml-2"></i> tambah data</a>
+                  </div>
+                  <div class="card-body">
+                    <table class="table">
+                        <thead>
+                           <th>No</th>
+                           <th>Aksi</th>
+                           <th>Username</th>
+                           <th>Nama</th>
+                           <th>Email</th>
+                        </thead>
+                        <tbody>
+                            @foreach($list_user as $user)
+                          <tr>
+                            <td>{{$loop->iteration}}</td>
+                            <td>
+                              <div class="btn-group">
+                                <a href="{{ url('user', $user->id) }}" class="btn btn-dark"><i class="fa fa-info"></i></a>
+                                <a href="{{ url('user', $user->id) }}/edit" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                               @include('utils.delete',['url' => url('user', $user->id)])
+                            </td>
+                                <td>{{$user->username}}</td>
+                                <td> {{$user->nama}} </td>
+                                <td>{{$user->email}}</td>
+                             </div>
+                          </tr>
+                          @endforeach
+                        </tbody>
+                    </table> 
                   </div>
                 </div>
               </div>  

@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Models;
-use App\Models\Artikel;
-use App\Models\UserDetail;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,15 +11,5 @@ class User extends Authenticatable
 {
     protected $table = 'user';
     use HasFactory, Notifiable;
-
-    function detail(){
-        return $this->hasOne(UserDetail::class, 'id_user');
-
-    }
-
-      function artikel(){
-        return $this->hasMany(Artikel::class, 'id_user');
-
-    }
 
 }
