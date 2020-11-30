@@ -17,5 +17,10 @@ class HomeController extends Controller{
 		return view('client.client');
 	}
 
+	function dashboard(){
+		return view('template.dashboard');
+	}
+
+
 
 }

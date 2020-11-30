@@ -22,7 +22,7 @@ class UserController extends Controller{
 		
 		$user->save();
 
-		return redirect('user')->with('success', 'Data Berhasil Ditambahkan');
+		return redirect('admin/user')->with('success', 'Data Berhasil Ditambahkan');
 		
 	}
 	function show(User $user){
@@ -43,13 +43,13 @@ class UserController extends Controller{
 		
 		$user->save();
 
-		return redirect('user')->with('warning', 'Data Berhasil Diupdate');
+		return redirect('admin/user')->with('warning', 'Data Berhasil Diupdate');
 		
 	}
 	function destroy(User $user){
 		$user->delete();
 
-		return redirect('user')->with('danger', 'Data Berhasil Dihapus');
+		return redirect('admin/user')->with('danger', 'Data Berhasil Dihapus');
 		
 	}
 }

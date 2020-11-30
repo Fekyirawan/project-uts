@@ -8,7 +8,7 @@
                     Tambah Data produk
                   </div>
                   <div class="card-body" >
-                   <form action="{{url('artikel')}}" method="post">
+                   <form action="{{url('admin/artikel')}}" method="post">
                       @csrf
                      <div class="form-group">
                         <label for="" class="control-label">Judul</label>

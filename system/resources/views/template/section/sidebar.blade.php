@@ -23,7 +23,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item has-treeview menu-open">
-            <a href="{{url('admin/beranda')}}" class="nav-link active">
+            <a href="{{url('dashboard')}}" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -32,7 +32,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{url('artikel')}}" class="nav-link">
+            <a href="{{url('admin/artikel')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Artikel
@@ -40,7 +40,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{url('user')}}" class="nav-link">
+            <a href="{{url('admin/user')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 User

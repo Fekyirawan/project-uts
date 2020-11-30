@@ -21,7 +21,7 @@ class ArtikelController extends Controller{
 		
 		$artikel->save();
 
-		return redirect('artikel')->with('success', 'Data Berhasil Ditambahkan');
+		return redirect('admin/artikel')->with('success', 'Data Berhasil Ditambahkan');
 	}
 
 		function show(Artikel $artikel){
@@ -40,13 +40,13 @@ class ArtikelController extends Controller{
 		
 		$artikel->save();
 
-		return redirect('artikel')->with('warning', 'Data Berhasil Ditambahkan');
+		return redirect('admin/artikel')->with('warning', 'Data Berhasil Ditambahkan');
 	}
 
 		function destroy(Artikel $artikel){
 		$artikel->delete();
 
-		return redirect('artikel')->with('danger', 'Data Berhasil Ditambahkan');
+		return redirect('admin/artikel')->with('danger', 'Data Berhasil Ditambahkan');
 	}
 
 
