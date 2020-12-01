@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 class HomeController extends Controller{
 
 	function base(){
@@ -12,14 +13,10 @@ class HomeController extends Controller{
 		return view('template.produk');
 	}
 
-
-	function client(){
-		return view('client.client');
-	}
-
 	function dashboard(){
 		return view('template.dashboard');
 	}
+
 
 
 

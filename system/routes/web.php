@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\http\Controllers\HomeController;
 use App\http\Controllers\AuthController;
 use App\http\Controllers\ArtikelController;
+use App\http\Controllers\ClientController;
 use App\http\Controllers\UserController;
 
 /*
@@ -27,6 +28,10 @@ Route::get('registrasi', [AuthController::class, 'registrasi']);
 Route::post('registrasi', [AuthController::class, 'store']);
 Route::get('logout', [AuthController::class, 'logout']);
 Route::get('dashboard', [HomeController::class, 'dashboard']);
+Route::get('client', [ClientController::class, 'client']);
+Route::get('blog', [ClientController::class, 'blog']);
+
+
 
 
 Route::prefix('admin')->middleware('auth')->group(function(){
